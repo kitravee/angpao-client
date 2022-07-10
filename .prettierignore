@@ -1,0 +1,6 @@
+public
+build
+tsconfig.json
+.prettierrc
+.next
+.package
