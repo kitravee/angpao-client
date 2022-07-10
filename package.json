@@ -3,22 +3,50 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "env-cmd -f .env.development.local next dev",
+    "dev:test": "env-cmd -f .env.test.local next dev",
+    "dev:prod": "env-cmd -f .env.production.local next dev",
+    "build:dev": "env-cmd -f .env.development.local next build",
+    "build:test": "env-cmd -f .env.test.local next build",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "analyze": "ANALYZE=true next build",
+    "lint": "next lint",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
+    "test-all": "yarn check-lint && yarn check-types && yarn build",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "eslint": "8.19.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-config-next": "12.2.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "husky": "^8.0.1",
+    "prettier": "2.5.1",
     "typescript": "4.7.4"
   }
 }
