@@ -6,12 +6,10 @@ interface CustomAppProps extends AppProps {
   Component: PageComponent;
 }
 
-function MyApp(props: CustomAppProps) {
-  const { Component, pageProps } = props;
+function MyApp({ Component, pageProps }: CustomAppProps) {
   const getLayout = Component.getLayout ?? ((page) => page);
-  const renderComponent = getLayout(<Component {...pageProps} />);
 
-  return <>{renderComponent}</>;
+  return getLayout(<Component {...pageProps} />);
 }
 
 export default MyApp;

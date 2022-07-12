@@ -9,7 +9,7 @@ const Home: PageComponent = () => {
       <Head>
         <title>Welcome</title>
       </Head>
-      {/* <SomeFeatureView /> */}
+      <div>content</div>
     </>
   );
 };
