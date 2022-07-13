@@ -52,7 +52,7 @@ jobs:
         run: yarn check-lint
 
       - name: Run lint type
-        run: yarn check-type
+        run: yarn check-types
 
       - name: Build
         run: yarn build
