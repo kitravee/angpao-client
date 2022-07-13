@@ -1,0 +1,63 @@
+{
+  "Typescript React Function Component": {
+    "prefix": "comp",
+    "body": [
+      "import { FC } from 'react';",
+      "",
+      "interface ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}Props {",
+      "\tsomeProps?: any;",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}: FC<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}Props> = ({ someProps }) => {",
+      "\treturn <>{someProps}$0</>;",
+      "};",
+      ""
+    ],
+    "description": "Typescript React Function Component"
+  },
+  "Typescript Next.js Page": {
+    "prefix": "page",
+    "body": [
+      "import { Box } from '@mui/system';",
+      "import { GetStaticProps, GetServerSideProps } from 'next';",
+      "import Head from 'next/head';",
+      "",
+      "import { PageComponent } from '@/types/next-page';",
+      "",
+      "export const getStaticProps: GetStaticProps = async (_context) => {",
+      "\treturn {",
+      "\t\tprops: {",
+      "\t\t\tsomeProps: 'someProps',",
+      "\t\t},",
+      "\t};",
+      "};",
+      "",
+      "export const getServerSideProps: GetServerSideProps = async (_context) => {",
+      "\treturn {",
+      "\t\tprops: {",
+      "\t\t\tsomeProps: 'someProps',",
+      "\t\t},",
+      "\t};",
+      "};",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}: PageComponent = () => {",
+      "\treturn (",
+      "\t\t<>",
+      "\t\t\t<Head>",
+      "\t\t\t\t<title>title</title>",
+      "\t\t\t</Head>",
+      "\t\t</>",
+      "\t );",
+      "};",
+      "",
+      "${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}.getLayout = (page) => {",
+      "\treturn <Box sx={{ bgcolor: 'background.default' }}>{page}</Box>;",
+      "};",
+      "",
+      "${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}.auth = false;",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g};"
+    ],
+    "description": "Next.js Page"
+  }
+}

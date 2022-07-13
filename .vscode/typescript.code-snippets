@@ -1,0 +1,21 @@
+{
+  "Typescript Next.js api": {
+    "prefix": "api",
+    "body": [
+      "import type { NextApiRequest, NextApiResponse } from 'next';",
+      "",
+      "type ${TM_FILENAME_BASE/(.*)$/${1:/capitalize}/}Data = {",
+      "\tname: string;",
+      "};",
+      "",
+      "export default function handler(",
+      "\t_req: NextApiRequest,",
+      "\tres: NextApiResponse<${TM_FILENAME_BASE/(.*)$/${1:/capitalize}/}Data>,",
+      ") {",
+      "\tres.status(200).json({ name: 'John Doe' });",
+      "}",
+      ""
+    ],
+    "description": "Next.js API"
+  }
+}
