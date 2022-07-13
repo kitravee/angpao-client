@@ -1,6 +1,8 @@
+import '@/styles/globals.css';
+
 import type { AppProps } from 'next/app';
 
-import { PageComponent } from '../types/next-page';
+import { PageComponent } from '@/types/next-page';
 
 interface CustomAppProps extends AppProps {
   Component: PageComponent;
