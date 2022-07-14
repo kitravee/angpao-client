@@ -23,7 +23,9 @@
     "next.config.js",
     "next-env.d.ts",
     ".eslintrc.js",
-    "commitlint.config.js"
+    "commitlint.config.js",
+    "tailwind.config.js",
+    "postcss.config.js"
   ],
   "parserOptions": {
     "project": "tsconfig.json",
