@@ -5,6 +5,9 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       colors: {
         ap1: '#DB5229',
