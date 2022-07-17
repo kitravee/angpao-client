@@ -8,10 +8,12 @@ interface MainLayoutProps {
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <>
-      <Topbar />
-      {children}
-      <Footer />
-    </>
+    <div className="bg-slate-100">
+      <div className="container max-w-md bg-white">
+        <Topbar />
+        {children}
+        <Footer />
+      </div>
+    </div>
   );
 };
