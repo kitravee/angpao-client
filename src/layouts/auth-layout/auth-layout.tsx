@@ -1,18 +1,16 @@
-import { Footer } from './footer';
 import { Topbar } from './topbar';
 
-interface MainLayoutProps {
+interface AuthLayoutProps {
   className?: string;
   children?: React.ReactNode;
 }
 
-export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+export const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   return (
     <div className="bg-slate-100">
-      <div className="container max-w-md bg-white">
+      <div className="container h-screen max-w-md pb-10 bg-white">
         <Topbar />
         {children}
-        <Footer />
       </div>
     </div>
   );
