@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 
 import { EmotionCache } from '@emotion/cache';
+import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 
 import { createEmotionCache, EmotionCacheProvider } from '@/lib/emotion';
@@ -22,11 +23,13 @@ function MyApp({
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    <EmotionCacheProvider emotionCache={emotionCache}>
-      <MainThemeProvider>
-        {getLayout(<Component {...pageProps} />)}
-      </MainThemeProvider>
-    </EmotionCacheProvider>
+    <SessionProvider session={pageProps.session}>
+      <EmotionCacheProvider emotionCache={emotionCache}>
+        <MainThemeProvider>
+          {getLayout(<Component {...pageProps} />)}
+        </MainThemeProvider>
+      </EmotionCacheProvider>
+    </SessionProvider>
   );
 }
 

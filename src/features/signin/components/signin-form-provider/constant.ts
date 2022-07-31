@@ -1,6 +1,6 @@
 import { SigninFormData } from '../../types';
 
 export const DEFAULT_SIGNIN_FORM = {
-  email: '',
+  username: '',
   password: '',
 } as SigninFormData;

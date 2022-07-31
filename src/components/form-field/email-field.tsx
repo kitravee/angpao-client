@@ -23,7 +23,7 @@ export const EmailField = () => {
         placeholder="email"
         size="small"
         type="text"
-        {...register('email')}
+        {...register('username')}
       />
     </>
   );

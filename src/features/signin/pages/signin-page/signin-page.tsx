@@ -1,14 +1,17 @@
-import LoadingButton from '@mui/lab/LoadingButton';
 import { Box } from '@mui/system';
+import { signIn } from 'next-auth/react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import { EmailField, PasswordField } from '@/components/form-field';
+import { SubmitButton } from '@/components/submit-button';
 import { AuthLayout } from '@/layouts/auth-layout';
 import { PageComponent } from '@/types/next-page';
 
 import { SigninFormProvider } from '../../components/signin-form-provider';
 
 const SigninPage: PageComponent = () => {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -18,9 +21,12 @@ const SigninPage: PageComponent = () => {
       <div className="flex flex-col px-4 pb-12 align-items-center">
         <SigninFormProvider
           onSubmit={async (data) => {
-            // TODO: Connect API
-            // eslint-disable-next-line no-console
-            await console.log(data);
+            await signIn('email-password-credentials', {
+              username: data.username,
+              password: data.password,
+              redirect: false,
+            });
+            router.push('/');
           }}
         >
           <Box
@@ -32,17 +38,8 @@ const SigninPage: PageComponent = () => {
             <EmailField />
             <PasswordField />
           </Box>
-          <LoadingButton
-            disableElevation
-            fullWidth
-            color="primary"
-            size="large"
-            sx={{ color: 'white' }}
-            type="submit"
-            variant="contained"
-          >
-            เข้าสู่ระบบ
-          </LoadingButton>
+
+          <SubmitButton>เข้าสู่ระบบ</SubmitButton>
         </SigninFormProvider>
       </div>
     </>
