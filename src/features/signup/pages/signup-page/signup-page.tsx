@@ -18,7 +18,7 @@ const SignupPage: PageComponent = () => {
   return (
     <>
       <Head>
-        <title>signin | angpao</title>
+        <title>signup | angpao</title>
       </Head>
 
       <div className="flex flex-col px-4 pb-12 align-items-center">
