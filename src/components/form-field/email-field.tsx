@@ -22,6 +22,7 @@ export const EmailField = () => {
         id={id}
         placeholder="email"
         size="small"
+        type="email"
         {...register('email')}
       />
     </>

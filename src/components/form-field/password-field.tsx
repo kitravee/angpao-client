@@ -21,6 +21,7 @@ export const PasswordField = () => {
         id={id}
         placeholder="password"
         size="small"
+        type="password"
         {...register('password')}
       />
     </>
