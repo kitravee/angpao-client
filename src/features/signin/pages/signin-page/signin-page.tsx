@@ -1,15 +1,12 @@
 import LoadingButton from '@mui/lab/LoadingButton';
+import { Box } from '@mui/system';
 import Head from 'next/head';
 
-// import { Button as Btt } from '@/components';
+import { EmailField, PasswordField } from '@/components/form-field';
 import { AuthLayout } from '@/layouts/auth-layout';
 import { PageComponent } from '@/types/next-page';
 
-import { EmailField } from '../../components/email-field';
-import { PasswordField } from '../../components/password-field';
 import { SigninFormProvider } from '../../components/signin-form-provider';
-
-import { Header } from './header';
 
 const SigninPage: PageComponent = () => {
   return (
@@ -18,9 +15,7 @@ const SigninPage: PageComponent = () => {
         <title>signin | angpao</title>
       </Head>
 
-      <Header />
-
-      <div className="flex flex-col px-10 py-2 align-items-center">
+      <div className="flex flex-col px-4 pb-12 align-items-center">
         <SigninFormProvider
           onSubmit={async (data) => {
             // TODO: Connect API
@@ -28,17 +23,18 @@ const SigninPage: PageComponent = () => {
             await console.log(data);
           }}
         >
-          <div className="pb-6">
+          <Box
+            sx={{
+              '& > div': { paddingBottom: 3 },
+              '& > div:last-child': { paddingBottom: 6 },
+            }}
+          >
             <EmailField />
-          </div>
-          <div className="pb-6">
             <PasswordField />
-          </div>
-
+          </Box>
           <LoadingButton
             disableElevation
             fullWidth
-            loading
             color="primary"
             size="large"
             sx={{ color: 'white' }}
@@ -54,7 +50,7 @@ const SigninPage: PageComponent = () => {
 };
 
 SigninPage.getLayout = (page) => {
-  return <AuthLayout>{page}</AuthLayout>;
+  return <AuthLayout title="เข้าสู่ระบบ">{page}</AuthLayout>;
 };
 
 SigninPage.auth = false;
