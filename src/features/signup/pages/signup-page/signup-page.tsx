@@ -2,17 +2,23 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { Box } from '@mui/system';
 import Head from 'next/head';
 
-import { EmailField, PasswordField } from '@/components/form-field';
+// import { Button as Btt } from '@/components';
+import {
+  EmailField,
+  PasswordField,
+  PhoneField,
+  UsertypeRadioField,
+} from '@/components/form-field';
 import { AuthLayout } from '@/layouts/auth-layout';
 import { PageComponent } from '@/types/next-page';
 
-import { SigninFormProvider } from '../../components/signin-form-provider';
+import { SigninFormProvider } from '../../components/signup-form-provider';
 
-const SigninPage: PageComponent = () => {
+const SignupPage: PageComponent = () => {
   return (
     <>
       <Head>
-        <title>signin | angpao</title>
+        <title>signup | angpao</title>
       </Head>
 
       <div className="flex flex-col px-4 pb-12 align-items-center">
@@ -29,12 +35,16 @@ const SigninPage: PageComponent = () => {
               '& > div:last-child': { paddingBottom: 6 },
             }}
           >
+            <UsertypeRadioField />
             <EmailField />
             <PasswordField />
+            <PhoneField />
           </Box>
+
           <LoadingButton
             disableElevation
             fullWidth
+            // loading
             color="primary"
             size="large"
             sx={{ color: 'white' }}
@@ -49,10 +59,10 @@ const SigninPage: PageComponent = () => {
   );
 };
 
-SigninPage.getLayout = (page) => {
-  return <AuthLayout title="เข้าสู่ระบบ">{page}</AuthLayout>;
+SignupPage.getLayout = (page) => {
+  return <AuthLayout title="สมัครสมาชิก">{page}</AuthLayout>;
 };
 
-SigninPage.auth = false;
+SignupPage.auth = false;
 
-export default SigninPage;
+export default SignupPage;
