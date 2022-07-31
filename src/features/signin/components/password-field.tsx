@@ -1,7 +1,7 @@
+import { InputLabel, TextField } from '@mui/material';
 import { useFormContext } from 'react-hook-form';
 
-import { TextInput } from '@/components';
-
+const id = 'password-input';
 export const PasswordField = () => {
   const {
     register,
@@ -9,15 +9,20 @@ export const PasswordField = () => {
   } = useFormContext();
 
   return (
-    <TextInput
-      className="w-full"
-      disabled={isSubmitting}
-      helperText={errors.password?.message as string | undefined}
-      label="รหัสผ่าน"
-      placeholder="password"
-      size="large"
-      type="password"
-      {...register('password')}
-    />
+    <>
+      <InputLabel shrink htmlFor={id}>
+        รหัสผ่าน
+      </InputLabel>
+      <TextField
+        fullWidth
+        disabled={isSubmitting}
+        error={!!errors.password?.message}
+        helperText={errors.password?.message as string | undefined}
+        id={id}
+        placeholder="password"
+        size="small"
+        {...register('password')}
+      />
+    </>
   );
 };

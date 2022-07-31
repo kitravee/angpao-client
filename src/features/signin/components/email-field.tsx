@@ -1,6 +1,7 @@
+import { InputLabel, TextField } from '@mui/material';
 import { useFormContext } from 'react-hook-form';
 
-import { TextInput } from '@/components';
+const id = 'email-input';
 
 export const EmailField = () => {
   const {
@@ -9,14 +10,20 @@ export const EmailField = () => {
   } = useFormContext();
 
   return (
-    <TextInput
-      className="w-full"
-      disabled={isSubmitting}
-      helperText={errors.email?.message as string | undefined}
-      label="อีเมลล์"
-      placeholder="email"
-      size="large"
-      {...register('email')}
-    />
+    <>
+      <InputLabel shrink htmlFor={id}>
+        อีเมลล์
+      </InputLabel>
+      <TextField
+        fullWidth
+        disabled={isSubmitting}
+        error={!!errors.email?.message}
+        helperText={errors.email?.message as string | undefined}
+        id={id}
+        placeholder="email"
+        size="small"
+        {...register('email')}
+      />
+    </>
   );
 };
