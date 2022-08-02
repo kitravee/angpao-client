@@ -6,7 +6,7 @@ import { SignupFormData } from '@/features/signup/types';
 import { UsertypeRadio } from './usertype-radio';
 
 export const UsertypeRadioField: FC = () => {
-  const fieldName = 'userType';
+  const fieldName = 'roleName';
   const { field } = useController<SignupFormData, typeof fieldName>({
     name: fieldName,
   });

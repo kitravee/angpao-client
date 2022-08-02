@@ -8,16 +8,16 @@ import {
 import { Box } from '@mui/system';
 import React, { FC } from 'react';
 
-import { UserType } from '@/features/signup/types';
+import { Role } from '@/features/signup/types';
 
 interface UsertypeRadioProps {
   name: string;
   className?: string;
-  value?: UserType;
-  onChange?: (value: UserType) => void;
+  value?: Role;
+  onChange?: (value: Role) => void;
 }
 
-const usertypes: { name: string; value: UserType; bgImage: string }[] = [
+const usertypes: { name: string; value: Role; bgImage: string }[] = [
   { name: 'ร้านค้า', value: 'MERCHANT', bgImage: "url('/icons/merchant.png')" },
   { name: 'ไกด์นำเที่ยว', value: 'USER', bgImage: "url('/icons/user.png')" },
 ];
@@ -26,7 +26,7 @@ export const UsertypeRadio: FC<UsertypeRadioProps> = React.forwardRef(
   (props, ref) => {
     const { onChange, value, name } = { ...props };
     const handleChage = (e: React.ChangeEvent<HTMLInputElement>): void => {
-      const deliveryBoxValue = e.target.value as UserType;
+      const deliveryBoxValue = e.target.value as Role;
       onChange?.(deliveryBoxValue);
     };
 
@@ -56,9 +56,6 @@ export const UsertypeRadio: FC<UsertypeRadioProps> = React.forwardRef(
               }}
             >
               <FormControlLabel
-                // className={clsx(classes.formControlLabel, {
-                //   active: value === 'REUSABLE',
-                // })}
                 control={<Radio />}
                 data-testid="checkout-delivery-box-reuse"
                 label={
