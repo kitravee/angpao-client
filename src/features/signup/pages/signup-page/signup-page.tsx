@@ -2,6 +2,7 @@ import { Box } from '@mui/system';
 import { signIn } from 'next-auth/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useSnackbar } from 'notistack';
 
 import {
   EmailField,
@@ -20,6 +21,7 @@ import { SignupFormProvider } from '../../components/signup-form-provider';
 const SignupPage: PageComponent = () => {
   const { mutateAsync: mutateSignup } = usePostSignup();
   const router = useRouter();
+  const { enqueueSnackbar } = useSnackbar();
 
   return (
     <>
@@ -34,16 +36,29 @@ const SignupPage: PageComponent = () => {
               await mutateSignup(data);
 
               //auto signin when register succes
-              await signIn('email-password-credentials', {
-                username: data.username,
-                password: data.password,
-                redirect: false,
-              });
+              const signinResponse = await signIn(
+                'email-password-credentials',
+                {
+                  username: data.username,
+                  password: data.password,
+                  redirect: false,
+                },
+              );
+              if (signinResponse?.ok) {
+                router.push('/');
+              }
 
+              if (!signinResponse?.ok) {
+                enqueueSnackbar(signinResponse?.error, {
+                  variant: 'error',
+                });
+              }
               router.push('/');
-            } catch (error) {
-              // handle error case
-              // console.error(error);
+            } catch (error: any) {
+              // handle Signup error
+              enqueueSnackbar(error?.message, {
+                variant: 'error',
+              });
             } finally {
               // console.log('settled');
             }
