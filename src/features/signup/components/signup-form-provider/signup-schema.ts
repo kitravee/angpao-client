@@ -1,8 +1,9 @@
 import * as yup from 'yup';
 
 export const signupSchema = yup.object().shape({
-  userType: yup.string().required('กรุณาเลือกประเภทผู้ใช้'),
-  email: yup
+  roleName: yup.string().required('กรุณาเลือกประเภทผู้ใช้'),
+  name: yup.string().required('กรุณากรอกชื่อ'),
+  username: yup
     .string()
     .required('กรุณากรอกอีเมลล์')
     .email('รูปแบบอีเมลล์ไม่ถูกต้อง'),

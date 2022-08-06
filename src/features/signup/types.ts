@@ -1,8 +1,9 @@
 export interface SignupFormData {
-  userType: UserType;
-  email: string;
+  roleName: Role;
+  name: string;
+  username: string;
   password: string;
   phone: string;
 }
 
-export type UserType = 'USER' | 'MERCHANT';
+export type Role = 'USER' | 'MERCHANT';

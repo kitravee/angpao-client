@@ -1,20 +1,26 @@
-import LoadingButton from '@mui/lab/LoadingButton';
 import { Box } from '@mui/system';
+import { signIn } from 'next-auth/react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-// import { Button as Btt } from '@/components';
 import {
   EmailField,
   PasswordField,
   PhoneField,
   UsertypeRadioField,
 } from '@/components/form-field';
+import { NameField } from '@/components/form-field/name-field';
+import { SubmitButton } from '@/components/submit-button';
 import { AuthLayout } from '@/layouts/auth-layout';
 import { PageComponent } from '@/types/next-page';
 
-import { SigninFormProvider } from '../../components/signup-form-provider';
+import { usePostSignup } from '../../api/use-signup';
+import { SignupFormProvider } from '../../components/signup-form-provider';
 
 const SignupPage: PageComponent = () => {
+  const { mutateAsync: mutateSignup } = usePostSignup();
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -22,11 +28,25 @@ const SignupPage: PageComponent = () => {
       </Head>
 
       <div className="flex flex-col px-4 pb-12 align-items-center">
-        <SigninFormProvider
+        <SignupFormProvider
           onSubmit={async (data) => {
-            // TODO: Connect API
-            // eslint-disable-next-line no-console
-            await console.log(data);
+            try {
+              await mutateSignup(data);
+
+              //auto signin when register succes
+              await signIn('email-password-credentials', {
+                username: data.username,
+                password: data.password,
+                redirect: false,
+              });
+
+              router.push('/');
+            } catch (error) {
+              // handle error case
+              // console.error(error);
+            } finally {
+              // console.log('settled');
+            }
           }}
         >
           <Box
@@ -36,24 +56,14 @@ const SignupPage: PageComponent = () => {
             }}
           >
             <UsertypeRadioField />
+            <NameField />
             <EmailField />
             <PasswordField />
             <PhoneField />
           </Box>
 
-          <LoadingButton
-            disableElevation
-            fullWidth
-            // loading
-            color="primary"
-            size="large"
-            sx={{ color: 'white' }}
-            type="submit"
-            variant="contained"
-          >
-            เข้าสู่ระบบ
-          </LoadingButton>
-        </SigninFormProvider>
+          <SubmitButton>สมัครสมาชิก</SubmitButton>
+        </SignupFormProvider>
       </div>
     </>
   );

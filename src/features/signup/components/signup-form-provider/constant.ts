@@ -1,8 +1,9 @@
 import { SignupFormData } from '../../types';
 
 export const DEFAULT_SIGNUP_FORM = {
-  userType: 'MERCHANT',
-  email: '',
+  roleName: 'MERCHANT',
+  name: '',
+  username: '',
   password: '',
   phone: '',
 } as SignupFormData;

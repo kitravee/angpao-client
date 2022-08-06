@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 export const signinSchema = yup.object().shape({
-  email: yup
+  username: yup
     .string()
     .required('กรุณากรอกอีเมลล์')
     .email('รูปแบบอีเมลล์ไม่ถูกต้อง'),
