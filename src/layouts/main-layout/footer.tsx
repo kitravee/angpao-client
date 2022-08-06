@@ -1,5 +1,44 @@
-import { FC } from 'react';
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
+import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
+import React, { FC } from 'react';
 
 export const Footer: FC = () => {
-  return <div>footer</div>;
+  const [value, setValue] = React.useState(0);
+
+  return (
+    <Paper
+      className="max-w-md"
+      elevation={3}
+      sx={{
+        position: 'fixed',
+        transform: 'translateX(-50%)',
+        width: '100%',
+        left: '50%',
+        bottom: 0,
+      }}
+    >
+      <BottomNavigation
+        showLabels
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      >
+        <BottomNavigationAction icon={<HomeOutlinedIcon />} label="หน้าแรก" />
+        <BottomNavigationAction icon={<AddBoxOutlinedIcon />} label="โพสงาน" />
+        <BottomNavigationAction
+          icon={<QrCodeScannerRoundedIcon />}
+          label="สแกน"
+        />
+        <BottomNavigationAction
+          icon={<AssignmentOutlinedIcon />}
+          label="ใบงาน"
+        />
+      </BottomNavigation>
+    </Paper>
+    // </Box>
+  );
 };

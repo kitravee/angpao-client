@@ -13,7 +13,13 @@ module.exports = {
       center: true,
     },
     extend: {
-      colors: {},
+      colors: {
+        ag1: '#DB5229',
+        ag2: '#FFBB16',
+        ag3: '#E3D645',
+        ag4: '#53A86F',
+        ag5: '#1F685C',
+      },
       fontFamily: {
         sans: ['Prompt', ...defaultTheme.fontFamily.sans],
       },

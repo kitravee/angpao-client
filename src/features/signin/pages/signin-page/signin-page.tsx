@@ -1,9 +1,11 @@
+// import { Button } from '@mui/material';
 import { Box } from '@mui/system';
 import { signIn } from 'next-auth/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { EmailField, PasswordField } from '@/components/form-field';
+// import Link from '@/components/link';
 import { SubmitButton } from '@/components/submit-button';
 import { AuthLayout } from '@/layouts/auth-layout';
 import { PageComponent } from '@/types/next-page';
@@ -17,7 +19,6 @@ const SigninPage: PageComponent = () => {
       <Head>
         <title>signin | angpao</title>
       </Head>
-
       <div className="flex flex-col px-4 pb-12 align-items-center">
         <SigninFormProvider
           onSubmit={async (data) => {
@@ -40,6 +41,19 @@ const SigninPage: PageComponent = () => {
           </Box>
 
           <SubmitButton>เข้าสู่ระบบ</SubmitButton>
+          {/* <Button
+            fullWidth
+            LinkComponent={Link}
+            color="secondary"
+            href="/signup"
+            sx={{
+              marginTop: 2,
+              border: (theme) => `1px solid ${theme.palette.angpao.ag1}`,
+            }}
+            variant="outlined"
+          >
+            สมัครสมาชิก
+          </Button> */}
         </SigninFormProvider>
       </div>
     </>
