@@ -46,7 +46,7 @@ export const UsertypeRadio: FC<UsertypeRadioProps> = React.forwardRef(
         >
           {usertypes.map(({ name, value: templateValue, bgImage }) => (
             <Box
-              key="name"
+              key={name}
               sx={{
                 backgroundImage: `${bgImage}`,
                 backgroundRepeat: 'no-repeat',

@@ -1,6 +1,6 @@
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-import AgApi from '../axios';
+import AgApi from '../ag-axios';
 
 export const authProviders = [
   CredentialsProvider({
