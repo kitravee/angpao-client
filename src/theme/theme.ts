@@ -3,6 +3,23 @@ import { createTheme } from '@mui/material/styles';
 
 // Create a theme instance.
 const theme = createTheme({
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+        style: {
+          borderRadius: '8px',
+        },
+      },
+    },
+    MuiInputBase: {
+      defaultProps: {
+        style: {
+          borderRadius: '8px',
+        },
+      },
+    },
+  },
   typography: {
     fontFamily: ['Prompt'].join(','),
   },
@@ -11,7 +28,7 @@ const theme = createTheme({
       main: '#FFBB16',
     },
     secondary: {
-      main: '#FFBB16',
+      main: '#DB5229',
     },
     error: {
       main: red.A400,

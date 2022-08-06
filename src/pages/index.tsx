@@ -1,3 +1,4 @@
+import { Container } from '@mui/system';
 import Head from 'next/head';
 
 import { MainLayout } from '@/layouts/main-layout';
@@ -9,12 +10,14 @@ const Home: PageComponent = () => {
       <Head>
         <title>Welcome</title>
       </Head>
-      <h1 className="text-6xl font-bold">
-        Welcome to
-        <a className="text-blue-600" href="https://nextjs.org">
-          Next.js!
-        </a>
-      </h1>
+      <Container>
+        <h1 className="text-6xl font-bold">
+          Welcome to
+          <a className="text-blue-600" href="https://nextjs.org">
+            Next.js!
+          </a>
+        </h1>
+      </Container>
     </>
   );
 };
