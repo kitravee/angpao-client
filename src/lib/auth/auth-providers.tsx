@@ -19,7 +19,7 @@ export const authProviders = [
 
     async authorize(credentials) {
       try {
-        const { data: responseData } = await AgApi.post(`/auth/logindd`, {
+        const { data: responseData } = await AgApi.post(`/auth/login`, {
           username: credentials?.username,
           password: credentials?.password,
         });
