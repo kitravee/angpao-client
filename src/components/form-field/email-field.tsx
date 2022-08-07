@@ -17,8 +17,8 @@ export const EmailField = () => {
       <TextField
         fullWidth
         disabled={isSubmitting}
-        error={!!errors.email?.message}
-        helperText={errors.email?.message as string | undefined}
+        error={!!errors.username?.message}
+        helperText={errors.username?.message as string | undefined}
         id={id}
         placeholder="email"
         size="small"

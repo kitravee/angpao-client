@@ -17,8 +17,8 @@ export const NameField = () => {
       <TextField
         fullWidth
         disabled={isSubmitting}
-        error={!!errors.email?.message}
-        helperText={errors.email?.message as string | undefined}
+        error={!!errors.name?.message}
+        helperText={errors.name?.message as string | undefined}
         id={id}
         placeholder="name"
         size="small"
