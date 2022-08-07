@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import { signIn } from 'next-auth/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useSnackbar } from 'notistack';
 
 import { EmailField, PasswordField } from '@/components/form-field';
 // import Link from '@/components/link';
@@ -11,9 +12,10 @@ import { AuthLayout } from '@/layouts/auth-layout';
 import { PageComponent } from '@/types/next-page';
 
 import { SigninFormProvider } from '../../components/signin-form-provider';
-
 const SigninPage: PageComponent = () => {
   const router = useRouter();
+  const { enqueueSnackbar } = useSnackbar();
+
   return (
     <>
       <Head>
@@ -22,12 +24,21 @@ const SigninPage: PageComponent = () => {
       <div className="flex flex-col px-4 pb-12 align-items-center">
         <SigninFormProvider
           onSubmit={async (data) => {
-            await signIn('email-password-credentials', {
+            const response = await signIn('email-password-credentials', {
               username: data.username,
               password: data.password,
               redirect: false,
             });
-            router.push('/');
+
+            if (response?.ok) {
+              router.push('/');
+            }
+
+            if (!response?.ok) {
+              enqueueSnackbar(response?.error, {
+                variant: 'error',
+              });
+            }
           }}
         >
           <Box

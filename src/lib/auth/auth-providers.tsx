@@ -16,6 +16,7 @@ export const authProviders = [
         label: 'password',
       },
     },
+
     async authorize(credentials) {
       try {
         const { data: responseData } = await AgApi.post(`/auth/login`, {
@@ -24,8 +25,9 @@ export const authProviders = [
         });
 
         return responseData;
-      } catch (error) {
-        throw new Error('ERR_LOGIN_FAILED');
+      } catch (err: any) {
+        // eslint-disable-next-line @typescript-eslint/no-throw-literal
+        throw err;
       }
     },
   }),

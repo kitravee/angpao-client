@@ -4,6 +4,7 @@ import { EmotionCache } from '@emotion/cache';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
+import { SnackbarProvider } from 'notistack';
 import { useState } from 'react';
 
 import { createEmotionCache, EmotionCacheProvider } from '@/lib/emotion';
@@ -31,11 +32,13 @@ function MyApp({
   return (
     <SessionProvider session={pageProps.session}>
       <QueryClientProvider client={queryClient}>
-        <EmotionCacheProvider emotionCache={emotionCache}>
-          <MainThemeProvider>
-            {getLayout(<Component {...pageProps} />)}
-          </MainThemeProvider>
-        </EmotionCacheProvider>
+        <SnackbarProvider preventDuplicate maxSnack={3}>
+          <EmotionCacheProvider emotionCache={emotionCache}>
+            <MainThemeProvider>
+              {getLayout(<Component {...pageProps} />)}
+            </MainThemeProvider>
+          </EmotionCacheProvider>
+        </SnackbarProvider>
       </QueryClientProvider>
     </SessionProvider>
   );
