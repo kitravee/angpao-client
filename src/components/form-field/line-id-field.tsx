@@ -1,9 +1,9 @@
 import { InputLabel, TextField } from '@mui/material';
 import { useFormContext } from 'react-hook-form';
 
-const id = 'email-input';
+const id = 'line-id-input';
 
-export const EmailField = () => {
+export const LineIdField = () => {
   const {
     register,
     formState: { errors, isSubmitting },
@@ -12,18 +12,18 @@ export const EmailField = () => {
   return (
     <>
       <InputLabel shrink htmlFor={id}>
-        อีเมลล์
+        line id
       </InputLabel>
       <TextField
         fullWidth
         disabled={isSubmitting}
-        error={!!errors.username?.message}
-        helperText={errors.username?.message as string | undefined}
+        error={!!errors.email?.message}
+        helperText={errors.email?.message as string | undefined}
         id={id}
-        placeholder="email"
+        placeholder="line id"
         size="small"
         type="text"
-        {...register('username')}
+        {...register('lineId')}
       />
     </>
   );

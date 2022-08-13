@@ -8,9 +8,11 @@ import {
   EmailField,
   PasswordField,
   PhoneField,
-  UsertypeRadioField,
+  // UsertypeRadioField,
 } from '@/components/form-field';
-import { NameField } from '@/components/form-field/name-field';
+import { FirstNameField } from '@/components/form-field/first-name-field';
+import { LastNameField } from '@/components/form-field/last-name-field';
+import { LineIdField } from '@/components/form-field/line-id-field';
 import { SubmitButton } from '@/components/submit-button';
 import { AuthLayout } from '@/layouts/auth-layout';
 import { PageComponent } from '@/types/next-page';
@@ -70,11 +72,13 @@ const SignupPage: PageComponent = () => {
               '& > div:last-child': { paddingBottom: 6 },
             }}
           >
-            <UsertypeRadioField />
-            <NameField />
+            {/* <UsertypeRadioField /> */}
+            <FirstNameField />
+            <LastNameField />
             <EmailField />
             <PasswordField />
             <PhoneField />
+            <LineIdField />
           </Box>
 
           <SubmitButton>สมัครสมาชิก</SubmitButton>

@@ -1,8 +1,9 @@
 import * as yup from 'yup';
 
 export const signupSchema = yup.object().shape({
-  roleName: yup.string().required('กรุณาเลือกประเภทผู้ใช้'),
-  name: yup.string().required('กรุณากรอกชื่อ'),
+  // roleName: yup.string().required('กรุณาเลือกประเภทผู้ใช้'),
+  firstName: yup.string().required('กรุณากรอกชื่อ'),
+  lastName: yup.string().required('กรุณากรอกนามสกุล'),
   username: yup
     .string()
     .required('กรุณากรอกอีเมลล์')
@@ -15,4 +16,5 @@ export const signupSchema = yup.object().shape({
     .string()
     .min(10, 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก')
     .max(10, 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก'),
+  lineId: yup.string().optional(),
 });
