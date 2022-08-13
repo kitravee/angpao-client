@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { useController } from 'react-hook-form';
 
-import { SignupFormData } from '@/features/signup/types';
+// import { SignupFormData } from '@/features/signup/types';
 
 import { UsertypeRadio } from './usertype-radio';
 
 export const UsertypeRadioField: FC = () => {
-  const fieldName = 'roleName';
-  const { field } = useController<SignupFormData, typeof fieldName>({
+  const fieldName = 'userTypeInfo';
+  const { field } = useController<any, typeof fieldName>({
     name: fieldName,
   });
 

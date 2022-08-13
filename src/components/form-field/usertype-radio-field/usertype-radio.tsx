@@ -6,29 +6,60 @@ import {
   Typography,
 } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { FC } from 'react';
+import React, { FC, useMemo } from 'react';
 
-import { Role } from '@/features/signup/types';
+import { Role, UserType, UserTypeInfo } from '@/features/my/types';
 
 interface UsertypeRadioProps {
   name: string;
   className?: string;
-  value?: Role;
-  onChange?: (value: Role) => void;
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
-const usertypes: { name: string; value: Role; bgImage: string }[] = [
-  { name: 'ร้านค้า', value: 'MERCHANT', bgImage: "url('/icons/merchant.png')" },
-  { name: 'ไกด์นำเที่ยว', value: 'USER', bgImage: "url('/icons/user.png')" },
+const usertypes: {
+  name: string;
+  role: Role;
+  userType: UserType;
+  bgImage: string;
+}[] = [
+  {
+    name: 'ทั่วไป',
+    role: 'USER',
+    userType: 'USER',
+    bgImage: "url('/icons/user.png')",
+  },
+  {
+    name: 'ไกด์รับงาน',
+    role: 'MERCHANT',
+    userType: 'GUIDE',
+    bgImage: "url('/icons/guide.png')",
+  },
+  {
+    name: 'ร้านค้า',
+    role: 'MERCHANT',
+    userType: 'OWNER',
+    bgImage: "url('/icons/merchant.png')",
+  },
+  {
+    name: 'แอดมินร้าน',
+    role: 'MERCHANT',
+    userType: 'ADMIN',
+    bgImage: "url('/icons/admin.png')",
+  },
 ];
 
 export const UsertypeRadio: FC<UsertypeRadioProps> = React.forwardRef(
   (props, ref) => {
     const { onChange, value, name } = { ...props };
     const handleChage = (e: React.ChangeEvent<HTMLInputElement>): void => {
-      const deliveryBoxValue = e.target.value as Role;
-      onChange?.(deliveryBoxValue);
+      onChange?.(e.target.value);
     };
+
+    const memoValue: UserTypeInfo = useMemo(
+      () => value && JSON?.parse(value),
+      [value],
+    );
 
     return (
       <FormControl sx={{ width: '100%' }}>
@@ -38,21 +69,28 @@ export const UsertypeRadio: FC<UsertypeRadioProps> = React.forwardRef(
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            height: '200px',
+            minHeight: '400px',
             justifyContent: 'space-between',
           }}
           value={value}
           onChange={handleChage}
         >
-          {usertypes.map(({ name, value: templateValue, bgImage }) => (
+          {usertypes.map(({ name, userType, bgImage, role }) => (
             <Box
               key={name}
               sx={{
+                position: 'relative',
+                borderRadius: 2,
+                backgroundColor: (theme) =>
+                  userType === memoValue?.userType
+                    ? `${theme.palette.primary.main}1A`
+                    : '',
                 backgroundImage: `${bgImage}`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '160px 160px',
                 backgroundPosition: 'center bottom',
                 width: '48%',
+                height: '185px',
               }}
             >
               <FormControlLabel
@@ -67,12 +105,12 @@ export const UsertypeRadio: FC<UsertypeRadioProps> = React.forwardRef(
                   margin: '0px',
                   backgroundColor: 'transparent',
                   border: (theme) =>
-                    templateValue === value
+                    userType === memoValue?.userType
                       ? `2px solid ${theme.palette.primary.main}`
                       : '',
                   borderRadius: 2,
                   boxShadow: (theme) =>
-                    templateValue === value
+                    userType === memoValue?.userType
                       ? theme.shadows[4]
                       : theme.shadows[2],
                   display: 'flex',
@@ -82,7 +120,7 @@ export const UsertypeRadio: FC<UsertypeRadioProps> = React.forwardRef(
                   width: '100%',
                   height: '100%',
                 }}
-                value={templateValue}
+                value={JSON.stringify({ role, userType })}
               />
             </Box>
           ))}
