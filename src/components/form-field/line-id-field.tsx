@@ -12,7 +12,7 @@ export const LineIdField = () => {
   return (
     <>
       <InputLabel shrink htmlFor={id}>
-        line id
+        ไลน์ไอดี
       </InputLabel>
       <TextField
         fullWidth

@@ -20,7 +20,7 @@ export const LastNameField = () => {
         error={!!errors.lastName?.message}
         helperText={errors.lastName?.message as string | undefined}
         id={id}
-        placeholder="last-name"
+        placeholder="last name"
         size="small"
         type="text"
         {...register('lastName')}

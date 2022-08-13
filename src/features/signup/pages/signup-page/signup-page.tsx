@@ -47,7 +47,7 @@ const SignupPage: PageComponent = () => {
                 },
               );
               if (signinResponse?.ok) {
-                router.push('/');
+                router.push('/my');
               }
 
               if (!signinResponse?.ok) {
@@ -55,7 +55,6 @@ const SignupPage: PageComponent = () => {
                   variant: 'error',
                 });
               }
-              router.push('/');
             } catch (error: any) {
               // handle Signup error
               enqueueSnackbar(error?.message, {
@@ -72,7 +71,6 @@ const SignupPage: PageComponent = () => {
               '& > div:last-child': { paddingBottom: 6 },
             }}
           >
-            {/* <UsertypeRadioField /> */}
             <FirstNameField />
             <LastNameField />
             <EmailField />

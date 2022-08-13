@@ -19,6 +19,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiInputLabel: {
+      defaultProps: {
+        style: {
+          fontSize: '20px',
+        },
+      },
+    },
   },
   typography: {
     fontFamily: ['Prompt'].join(','),
