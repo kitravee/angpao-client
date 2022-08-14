@@ -5,6 +5,6 @@ export const getAuthHeader = (accessToken?: string) => {
     };
   }
   return {
-    Authorization: `Bearer Guest`,
+    Authorization: 'Bearer GuestAG',
   };
 };

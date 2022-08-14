@@ -1,5 +1,5 @@
+import '@/styles/quill.snow.css';
 import '@/styles/globals.css';
-
 import { EmotionCache } from '@emotion/cache';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SessionProvider } from 'next-auth/react';
