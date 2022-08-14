@@ -38,6 +38,7 @@
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.2",
     "react-hook-form": "^7.33.1",
+    "react-number-format": "^4.9.3",
     "react-quill": "^2.0.0",
     "usehooks-ts": "^2.6.0",
     "yup": "^0.32.11"
