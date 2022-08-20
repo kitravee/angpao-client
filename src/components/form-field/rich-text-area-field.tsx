@@ -38,7 +38,7 @@ export const RichTextAreaField: FC<RichTextAreaFieldProps> = ({
         modules={{
           keyboard: {
             bindings: {
-              tab: 'disabled',
+              tab: null,
             },
           },
         }}
