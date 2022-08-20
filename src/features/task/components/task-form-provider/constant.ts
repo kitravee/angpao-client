@@ -5,19 +5,11 @@ export const DEFAULT_TASK_FORM = {
   description: { th: '', en: '' },
   phone: '',
   locationUrl: '',
-  tags: [],
+  tags: [''],
   imageUrl: [],
-  rates: [
-    {
-      rateType: 'THAI',
-      rateValue: undefined,
-      serviceValue: undefined,
-    },
-    {
-      rateType: 'THAI',
-      rateValue: undefined,
-      serviceValue: undefined,
-    },
-  ],
+  thaiRateValue: '',
+  thaiServiceValue: '',
+  foreignerRateValue: '',
+  foreignerServiceValue: '',
   taskDetail: { th: '', en: '' },
 } as TaskFormData;

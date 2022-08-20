@@ -1,4 +1,4 @@
-export interface TaskFormData {
+export interface TaskFormSubmitData {
   title: ContentLanguages;
   description: ContentLanguages;
   phone: string;
@@ -6,6 +6,20 @@ export interface TaskFormData {
   tags: string[];
   imageUrl: string[];
   rates: Rate[];
+  taskDetail: ContentLanguages;
+}
+
+export interface TaskFormData {
+  title: ContentLanguages;
+  description: ContentLanguages;
+  phone: string;
+  locationUrl: string;
+  tags: string[];
+  imageUrl: string[];
+  thaiRateValue: string;
+  thaiServiceValue: string;
+  foreignerRateValue: string;
+  foreignerServiceValue: string;
   taskDetail: ContentLanguages;
 }
 

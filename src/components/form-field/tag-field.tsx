@@ -29,8 +29,8 @@ export const TagField: FC<TagFieldProps> = () => {
       <Autocomplete
         freeSolo
         multiple
-        // defaultValue={[top100Tags[13].title]}
         clearOnBlur={true}
+        defaultValue={field.value}
         id={id}
         options={top100Tags.map((option) => option.title)}
         renderInput={(params) => (

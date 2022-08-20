@@ -1,14 +1,9 @@
-import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
-import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
-import { Dropzone } from '@/components/dropzone';
 import { PhoneField } from '@/components/form-field';
 import { DropzoneField } from '@/components/form-field/dropzone-field';
 import { LocationUrlField } from '@/components/form-field/location-url-field';
-import { PriceField } from '@/components/form-field/price-field';
 import { RichTextAreaField } from '@/components/form-field/rich-text-area-field';
 import { TagField } from '@/components/form-field/tag-field';
 import { TitleField } from '@/components/form-field/title-field';
@@ -16,7 +11,6 @@ import { SubmitButton } from '@/components/submit-button';
 import { AuthLayout } from '@/layouts/auth-layout';
 import { PageComponent } from '@/types/next-page';
 
-import { uploadImage } from '../../api/use-image-upload';
 import { TaskFormProvider } from '../../components/task-form-provider';
 
 import { PriceForForeigner } from './price-for-foreigner';
@@ -30,7 +24,7 @@ const TaskPage: PageComponent = () => {
       </Head>
       <Box px={2}>
         <TaskFormProvider
-          onSubmit={async (data) => {
+          onSubmit={async (_data) => {
             // console.log(data);
             // const res = await uploadImage(data.imageUrl);
             // console.log(res);

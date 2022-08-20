@@ -12,10 +12,10 @@ export const taskSchema = yup.object().shape({
     .string()
     .min(10, 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก')
     .max(10, 'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก'),
-  locationUrl: yup
-    .string()
-    .required('กรุณากรอกอีเมลล์')
-    .email('รูปแบบอีเมลล์ไม่ถูกต้อง'),
+  // locationUrl: yup
+  //   .string()
+  //   .required('กรุณากรอกอีเมลล์')
+  //   .required('Please Google map location'),
   tag: yup.array().optional(),
   // imageUrl: yup.object().shape({}),
   thaiRateValue: yup.string().required('Required'),

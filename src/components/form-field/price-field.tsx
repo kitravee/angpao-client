@@ -26,6 +26,7 @@ export const PriceField: FC<PriceFieldProps> = ({
 }) => {
   const {
     register,
+    getValues,
     formState: { errors, isSubmitting },
   } = useFormContext();
   return (
@@ -38,11 +39,12 @@ export const PriceField: FC<PriceFieldProps> = ({
         InputProps={{
           inputComponent: NumberInput as any,
           inputProps: {
-            fixedDecimalScale: true,
+            // fixedDecimalScale: true,
+            // suffix: '',
+            // prefix: '',
+            // thousandSeparator: true,
             allowNegative: false,
-            suffix: ' บาท',
-            prefix: '',
-            thousandSeparator: true,
+            defaultValue: getValues()?.[fieldName],
             sx: {
               borderLeft: (theme: Theme) =>
                 `1px solid ${theme.palette.grey[400]}`,

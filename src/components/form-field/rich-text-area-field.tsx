@@ -19,7 +19,7 @@ interface RichTextAreaFieldProps {
 export const RichTextAreaField: FC<RichTextAreaFieldProps> = ({
   fieldName = 'rich-text-area',
   inputLabelName = 'text-area',
-  id = 'rich-text-area-input',
+  id = 'rich-text-area-task-description',
   placeholder = 'text-area-placeholder',
 }) => {
   const mainFieldName = fieldName.split('.')[0];
@@ -35,14 +35,13 @@ export const RichTextAreaField: FC<RichTextAreaFieldProps> = ({
       </InputLabel>
       <QuillNoSSRWrapper
         id={id}
-        modules={
-          {
-            // toolbar: {
-            //   container: '#toolbar', // Selector for toolbar container
-            //   handlers: {},
-            // },
-          }
-        }
+        modules={{
+          keyboard: {
+            bindings: {
+              tab: 'disabled',
+            },
+          },
+        }}
         placeholder={placeholder}
         tabIndex={0}
         theme="snow"
