@@ -5,7 +5,7 @@ export const DEFAULT_TASK_FORM = {
   description: { th: '', en: '' },
   phone: '',
   locationUrl: '',
-  tags: [''],
+  tags: [],
   imageUrl: [],
   thaiRateValue: '',
   thaiServiceValue: '',

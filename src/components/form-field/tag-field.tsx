@@ -30,7 +30,6 @@ export const TagField: FC<TagFieldProps> = () => {
         freeSolo
         multiple
         clearOnBlur={true}
-        defaultValue={field.value}
         id={id}
         options={top100Tags.map((option) => option.title)}
         renderInput={(params) => (
@@ -50,7 +49,8 @@ export const TagField: FC<TagFieldProps> = () => {
             />
           ))
         }
-        onChange={(event, newValue) => {
+        value={field.value}
+        onChange={(_event, newValue) => {
           field.onChange(newValue);
         }}
       />
