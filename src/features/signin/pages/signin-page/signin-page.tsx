@@ -1,5 +1,4 @@
 // import { Button } from '@mui/material';
-// import { useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import { signIn } from 'next-auth/react';
 import Head from 'next/head';
@@ -16,8 +15,7 @@ import { SigninFormProvider } from '../../components/signin-form-provider';
 const SigninPage: PageComponent = () => {
   const router = useRouter();
   const { enqueueSnackbar } = useSnackbar();
-  // const theme = useTheme();
-  // console.log('ggg', theme.palette.mode);
+
   return (
     <>
       <Head>
