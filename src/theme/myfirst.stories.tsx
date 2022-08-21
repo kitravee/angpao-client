@@ -26,6 +26,7 @@ const Template: ComponentStory<typeof Button> = (args) => (
     <Button {...args}>Button</Button>
     <Button {...args}>Button</Button>
     <Button {...args}>Button</Button>
+    <Button {...args}>Button</Button>
   </>
 );
 
