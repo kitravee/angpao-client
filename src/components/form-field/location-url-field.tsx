@@ -1,9 +1,9 @@
 import { InputLabel, TextField } from '@mui/material';
 import { useFormContext } from 'react-hook-form';
 
-const id = 'line-id-input';
+const id = 'locationUrl-input';
 
-export const LineIdField = () => {
+export const LocationUrlField = () => {
   const {
     register,
     formState: { errors, isSubmitting },
@@ -12,18 +12,18 @@ export const LineIdField = () => {
   return (
     <>
       <InputLabel shrink htmlFor={id}>
-        ไลน์ไอดี
+        Url Google Map
       </InputLabel>
       <TextField
         fullWidth
         disabled={isSubmitting}
-        error={!!errors.name?.message}
-        helperText={errors.name?.message as string | undefined}
+        error={!!errors.locationUrl?.message}
+        helperText={errors.locationUrl?.message as string | undefined}
         id={id}
-        placeholder="line id"
+        placeholder="ลิ้ง Google Map"
         size="small"
         type="text"
-        {...register('lineId')}
+        {...register('locationUrl')}
       />
     </>
   );

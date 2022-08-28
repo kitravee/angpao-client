@@ -74,3 +74,5 @@ export const darkTheme = createTheme({
 });
 
 export default theme;
+
+export type Theme = typeof theme;

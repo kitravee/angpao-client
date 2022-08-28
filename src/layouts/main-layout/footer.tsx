@@ -5,6 +5,8 @@ import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
 import React, { FC } from 'react';
 
+import Link from '@/components/link';
+
 export const Footer: FC = () => {
   const [value, setValue] = React.useState(0);
 
@@ -27,13 +29,27 @@ export const Footer: FC = () => {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction icon={<HomeOutlinedIcon />} label="หน้าแรก" />
-        <BottomNavigationAction icon={<AddBoxOutlinedIcon />} label="โพสงาน" />
         <BottomNavigationAction
+          LinkComponent={Link}
+          href="/"
+          icon={<HomeOutlinedIcon />}
+          label="หน้าแรก"
+        />
+        <BottomNavigationAction
+          LinkComponent={Link}
+          href="/task"
+          icon={<AddBoxOutlinedIcon />}
+          label="โพสงาน"
+        />
+        <BottomNavigationAction
+          LinkComponent={Link}
+          href="#"
           icon={<QrCodeScannerRoundedIcon />}
           label="สแกน"
         />
         <BottomNavigationAction
+          LinkComponent={Link}
+          href="#"
           icon={<AssignmentOutlinedIcon />}
           label="ใบงาน"
         />
