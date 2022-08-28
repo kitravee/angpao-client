@@ -31,6 +31,7 @@ const theme = createTheme({
     fontFamily: ['Prompt'].join(','),
   },
   palette: {
+    mode: 'light',
     primary: {
       main: '#FFBB16',
     },
@@ -46,6 +47,28 @@ const theme = createTheme({
       ag3: '#E3D645',
       ag4: '#53A86F',
       ag5: '#1F685C',
+    },
+  },
+});
+
+export const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#ffed55',
+    },
+    secondary: {
+      main: '#ff8355',
+    },
+    error: {
+      main: red.A400,
+    },
+    angpao: {
+      ag1: '#ff8355',
+      ag2: '#ffed55',
+      ag3: '#ffff78',
+      ag4: '#84da9e',
+      ag5: '#519689',
     },
   },
 });

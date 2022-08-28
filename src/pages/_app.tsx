@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { createEmotionCache, EmotionCacheProvider } from '@/lib/emotion';
 import { queryConfig } from '@/lib/react-query';
 import { MainThemeProvider } from '@/theme/main-theme-provider';
+// import { ThemeSettingProvider } from '@/theme/theme-provider';
 import { PageComponent } from '@/types/next-page';
 
 interface CustomAppProps extends AppProps {

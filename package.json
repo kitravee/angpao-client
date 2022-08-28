@@ -13,7 +13,9 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
     "test-all": "yarn check-lint && yarn check-types && yarn build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
@@ -27,6 +29,8 @@
     "@mui/lab": "^5.0.0-alpha.92",
     "@mui/material": "^5.9.2",
     "@mui/system": "^5.2.6",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@tanstack/react-query": "^4.0.10",
     "axios": "^0.27.2",
     "clsx": "^1.2.1",
@@ -44,8 +48,15 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.10",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.4",
@@ -56,6 +67,8 @@
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
     "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
+    "chromatic": "^6.7.4",
     "eslint": "8.19.0",
     "eslint-config-airbnb": "^19.0.2",
     "eslint-config-airbnb-typescript": "^16.1.0",
@@ -68,6 +81,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-storybook": "^0.6.4",
     "husky": "^8.0.1",
     "postcss": "^8.4.14",
     "prettier": "2.5.1",
