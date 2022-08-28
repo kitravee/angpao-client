@@ -20,6 +20,7 @@ export const Footer: FC = () => {
         width: '100%',
         left: '50%',
         bottom: 0,
+        zIndex: (theme) => theme.zIndex.appBar,
       }}
     >
       <BottomNavigation
@@ -43,13 +44,13 @@ export const Footer: FC = () => {
         />
         <BottomNavigationAction
           LinkComponent={Link}
-          href="#"
+          href="/"
           icon={<QrCodeScannerRoundedIcon />}
           label="สแกน"
         />
         <BottomNavigationAction
           LinkComponent={Link}
-          href="#"
+          href="/"
           icon={<AssignmentOutlinedIcon />}
           label="ใบงาน"
         />
