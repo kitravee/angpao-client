@@ -30,6 +30,7 @@ export default class MyDocument extends Document<Props> {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
             name="viewport"
           />
+          <link href="/manifest.json" rel="manifest" />
 
           <link
             href="icon-48x48.png"
