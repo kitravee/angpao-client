@@ -33,109 +33,109 @@ export default class MyDocument extends Document<Props> {
           <link href="/manifest.json" rel="manifest" />
 
           <link
-            href="icon-48x48.png"
+            href="/icons/icon-48x48.png"
             rel="icon"
             sizes="48x48"
             type="image/png"
           />
           <link
-            href="icon-48x48.png"
+            href="/icons/icon-48x48.png"
             rel="apple-touch-icon"
             sizes="48x48"
             type="image/png"
           />
           <link
-            href="icon-72x72.png"
+            href="/icons/icon-72x72.png"
             rel="icon"
             sizes="72x72"
             type="image/png"
           />
           <link
-            href="icon-72x72.png"
+            href="/icons/icon-72x72.png"
             rel="apple-touch-icon"
             sizes="72x72"
             type="image/png"
           />
           <link
-            href="icon-96x96.png"
+            href="/icons/icon-96x96.png"
             rel="icon"
             sizes="96x96"
             type="image/png"
           />
           <link
-            href="icon-96x96.png"
+            href="/icons/icon-96x96.png"
             rel="apple-touch-icon"
             sizes="96x96"
             type="image/png"
           />
           <link
-            href="icon-128x128.png"
+            href="/icons/icon-128x128.png"
             rel="icon"
             sizes="128x128"
             type="image/png"
           />
           <link
-            href="icon-128x128.png"
+            href="/icons/icon-128x128.png"
             rel="apple-touch-icon"
             sizes="128x128"
             type="image/png"
           />
           <link
-            href="icon-144x144.png"
+            href="/icons/icon-144x144.png"
             rel="icon"
             sizes="144x144"
             type="image/png"
           />
           <link
-            href="icon-144x144.png"
+            href="/icons/icon-144x144.png"
             rel="apple-touch-icon"
             sizes="144x144"
             type="image/png"
           />
           <link
-            href="icon-152x152.png"
+            href="/icons/icon-152x152.png"
             rel="icon"
             sizes="152x152"
             type="image/png"
           />
           <link
-            href="icon-152x152.png"
+            href="/icons/icon-152x152.png"
             rel="apple-touch-icon"
             sizes="152x152"
             type="image/png"
           />
           <link
-            href="icon-192x192.png"
+            href="/icons/icon-192x192.png"
             rel="icon"
             sizes="192x192"
             type="image/png"
           />
           <link
-            href="icon-192x192.png"
+            href="/icons/icon-192x192.png"
             rel="apple-touch-icon"
             sizes="192x192"
             type="image/png"
           />
           <link
-            href="icon-384x384.png"
+            href="/icons/icon-384x384.png"
             rel="icon"
             sizes="384x384"
             type="image/png"
           />
           <link
-            href="icon-384x384.png"
+            href="/icons/icon-384x384.png"
             rel="apple-touch-icon"
             sizes="384x384"
             type="image/png"
           />
           <link
-            href="icon-512x512.png"
+            href="/icons/icon-512x512.png"
             rel="icon"
             sizes="512x512"
             type="image/png"
           />
           <link
-            href="icon-512x512.png"
+            href="/icons/icon-512x512.png"
             rel="apple-touch-icon"
             sizes="512x512"
             type="image/png"
