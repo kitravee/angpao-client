@@ -14,8 +14,8 @@
     "format": "prettier --write .",
     "test-all": "yarn check-lint && yarn check-types && yarn build",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 -s ./src",
+    "build-storybook": "build-storybook -s ./src"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",

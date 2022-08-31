@@ -5,7 +5,7 @@ import React from 'react';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'SystemButton',
+  title: 'example/testt',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -55,6 +55,39 @@ const Template: ComponentStory<typeof Button> = (args) => (
       </Button>
       <Button size="large" variant="contained" {...args}>
         large
+      </Button>
+    </Box>
+    <Box sx={{ '& > button': { mx: 0.5 } }}>
+      <Button size="small" {...args}>
+        เล็ก
+      </Button>
+      <Button size="medium" {...args}>
+        กลาง
+      </Button>
+      <Button size="large" {...args}>
+        ใหญ่
+      </Button>
+    </Box>
+    <Box sx={{ '& > button': { mx: 0.5 } }}>
+      <Button size="small" variant="outlined" {...args}>
+        เล็ก
+      </Button>
+      <Button size="medium" variant="outlined" {...args}>
+        กลาง
+      </Button>
+      <Button size="large" variant="outlined" {...args}>
+        ใหญ่
+      </Button>
+    </Box>
+    <Box sx={{ '& > button': { mx: 0.5 } }}>
+      <Button size="small" variant="contained" {...args}>
+        เล็ก
+      </Button>
+      <Button size="medium" variant="contained" {...args}>
+        กลาง
+      </Button>
+      <Button size="large" variant="contained" {...args}>
+        ใหญ่
       </Button>
     </Box>
   </Box>
