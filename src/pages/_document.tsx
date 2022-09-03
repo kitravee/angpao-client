@@ -19,7 +19,7 @@ export default class MyDocument extends Document<Props> {
             rel="stylesheet"
           />
           <meta content="" name="emotion-insertion-point" />
-
+          <meta name="theme-color" content="#DB5229" />
           {/* PWA */}
           <meta content="yes" name="mobile-web-app-capable" />
           <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -30,6 +30,7 @@ export default class MyDocument extends Document<Props> {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
             name="viewport"
           />
+     
           <link href="/manifest.json" rel="manifest" />
 
           <link
