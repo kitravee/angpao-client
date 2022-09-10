@@ -17,7 +17,7 @@ type SignupResponse = {
     updatedDate: string;
     role: {
       id: number;
-      name: 'MERCHANT';
+      name: 'MERCHANT' | string;
     };
     email: string;
   };

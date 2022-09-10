@@ -1,10 +1,12 @@
 export interface TaskFormSubmitData {
   title: ContentLanguages;
   description: ContentLanguages;
-  phone: string;
-  locationUrl: string;
-  tags: string[];
-  imageUrl: string[];
+  categoryId: string;
+  provinceId?: number;
+  phoneNumbers: string[];
+  locationUrl?: string;
+  tags?: string[];
+  imageUrl?: string[];
   rates: Rate[];
   taskDetail: ContentLanguages;
 }
@@ -12,20 +14,23 @@ export interface TaskFormSubmitData {
 export interface TaskFormData {
   title: ContentLanguages;
   description: ContentLanguages;
+  commissionType?: 'FIX' | 'PERCENTAGE';
+  categoryId?: string;
+  provinceId?: number;
   phone: string;
-  locationUrl: string;
+  locationUrl?: string;
   tags: string[];
-  imageUrl: string[];
-  thaiRateValue: string;
-  thaiServiceValue: string;
-  foreignerRateValue: string;
-  foreignerServiceValue: string;
+  imageUrl?: FormData;
+  thaiValue: string;
+  foreignerValue: string;
   taskDetail: ContentLanguages;
 }
 
-type ContentLanguages = Record<'th' | 'en', string>;
+export type ContentLanguages = Record<'th' | 'en', string>;
 type Rate = {
-  rateType: 'THAI' | 'FOREIGNER';
-  rateValue?: string;
-  serviceValue?: string;
+  id?: number;
+  commissionType?: 'THAI' | 'FOREIGNER';
+  commissionValue?: number;
+  commissionRateType?: 'PERCENTAGE' | 'FIX';
+  serviceValue?: number;
 };
