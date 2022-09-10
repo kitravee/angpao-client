@@ -5,28 +5,30 @@ import AgApi from '@/lib/ag-axios';
 import { getAuthHeader } from '@/utils/auth-header';
 
 type ImageUploadedResponse = {
-  asset_id: string;
-  public_id: string;
-  version: number;
-  version_id: string;
-  signature: string;
-  width: number;
-  height: number;
-  format: string;
-  resource_type: string;
-  created_at: string;
-  tags: string[];
-  bytes: number;
-  type: string;
-  etag: string;
-  placeholder: boolean;
-  url: string;
-  secure_url: string;
-  original_filename: string;
-  api_key: string;
+  data: {
+    asset_id: string;
+    public_id: string;
+    version: number;
+    version_id: string;
+    signature: string;
+    width: number;
+    height: number;
+    format: string;
+    resource_type: string;
+    created_at: string;
+    tags: string[];
+    bytes: number;
+    type: string;
+    etag: string;
+    placeholder: boolean;
+    url: string;
+    secure_url: string;
+    original_filename: string;
+    api_key: string;
+  };
 };
 
-export const uploadImage = async (data: FormData, accessToken?: string) => {
+export const uploadImage = async (data?: FormData, accessToken?: string) => {
   const response = await AgApi.post<FormData, ImageUploadedResponse>(
     `/upload`,
     data,
@@ -34,7 +36,7 @@ export const uploadImage = async (data: FormData, accessToken?: string) => {
       headers: { ...getAuthHeader(accessToken) },
     },
   );
-  return response;
+  return response?.data;
 };
 
 export const useUploadImage = async () => {

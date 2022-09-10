@@ -26,10 +26,6 @@ export default class MyDocument extends Document<Props> {
           <meta content="angpao" name="application-name" />
           <meta content="angpao" name="apple-mobile-web-app-title" />
           <meta content="/" name="msapplication-starturl" />
-          <meta
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-            name="viewport"
-          />
 
           <link href="/manifest.json" rel="manifest" />
 

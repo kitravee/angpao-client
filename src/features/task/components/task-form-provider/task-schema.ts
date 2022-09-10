@@ -16,11 +16,21 @@ export const taskSchema = yup.object().shape({
   //   .string()
   //   .required('กรุณากรอกอีเมลล์')
   //   .required('Please Google map location'),
+  provinceId: yup.number().required(),
+  categoryId: yup.number().required(),
+  commissionType: yup.string().required(),
+  thaiValue: yup.string().required(),
+  foreignerValue: yup.string().required(),
+  // thaiValue: yup.string().when('commissionType', {
+  //   is: 'FIX',
+  //   then: yup.string().required('Required'),
+  // }),
+  // foreignerValue: yup.string().when('commissionType', {
+  //   is: 'FIX',
+  //   then: yup.string().required('Required'),
+  // }),
   tag: yup.array().optional(),
   // imageUrl: yup.object().shape({}),
-  thaiRateValue: yup.string().required('Required'),
-  thaiServiceValue: yup.string().required('Required'),
-  foreignerRateValue: yup.string().required('Required'),
-  foreignerServiceValue: yup.string().required('Required'),
+
   taskDetail: ContentLanguagesSchema,
 });

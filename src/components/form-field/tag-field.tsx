@@ -49,7 +49,7 @@ export const TagField: FC<TagFieldProps> = () => {
             />
           ))
         }
-        value={field.value}
+        value={field.value ?? ''}
         onChange={(_event, newValue) => {
           field.onChange(newValue);
         }}

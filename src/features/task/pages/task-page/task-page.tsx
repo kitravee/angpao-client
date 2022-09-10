@@ -1,7 +1,9 @@
 import { Box } from '@mui/system';
 import Head from 'next/head';
+import { useSnackbar } from 'notistack';
 
 import { PhoneField } from '@/components/form-field';
+import { CategoriesDropdown } from '@/components/form-field/categories-dropdown';
 import { DropzoneField } from '@/components/form-field/dropzone-field';
 import { LocationUrlField } from '@/components/form-field/location-url-field';
 import { RichTextAreaField } from '@/components/form-field/rich-text-area-field';
@@ -11,12 +13,19 @@ import { SubmitButton } from '@/components/submit-button';
 import { AuthLayout } from '@/layouts/auth-layout';
 import { PageComponent } from '@/types/next-page';
 
+import { ProvincesDropdown } from '../../../../components/form-field/provinces-dropdown';
+import { useCreateTask } from '../../api/use-create-task';
+import { uploadImage } from '../../api/use-image-upload';
 import { TaskFormProvider } from '../../components/task-form-provider';
+import { taskSubmitTransform } from '../../transformer/task-transformer';
 
-import { PriceForForeigner } from './price-for-foreigner';
-import { PriceForThai } from './price-for-thai';
+import { CommissionView } from './commission-view';
 
 const TaskPage: PageComponent = () => {
+  const { mutateAsync: mutateCreateTask } = useCreateTask();
+
+  const { enqueueSnackbar } = useSnackbar();
+
   return (
     <>
       <Head>
@@ -24,23 +33,26 @@ const TaskPage: PageComponent = () => {
       </Head>
       <Box px={2}>
         <TaskFormProvider
-          onSubmit={async (_data) => {
-            // console.log(data);
-            // const res = await uploadImage(data.imageUrl);
-            // console.log(res);
-            // const response = await signIn('email-password-credentials', {
-            //   username: data.username,
-            //   password: data.password,
-            //   redirect: false,
-            // });
-            // if (response?.ok) {
-            //   router.push('/');
-            // }
-            // if (!response?.ok) {
-            //   enqueueSnackbar(response?.error, {
-            //     variant: 'error',
-            //   });
-            // }
+          onSubmit={async (data) => {
+            let imageUrl: any = undefined;
+            if (data?.imageUrl) {
+              const response = await uploadImage(data?.imageUrl as any);
+              imageUrl = response?.url;
+            }
+            try {
+              await mutateCreateTask(
+                taskSubmitTransform({
+                  ...data,
+                  imageUrl,
+                }),
+              );
+            } catch (error: any) {
+              enqueueSnackbar(error?.message, {
+                variant: 'error',
+              });
+            } finally {
+              // console.log('settled');
+            }
           }}
         >
           <Box
@@ -58,10 +70,11 @@ const TaskPage: PageComponent = () => {
             />
             <PhoneField />
             <LocationUrlField />
+            <CategoriesDropdown />
             <TagField />
             <DropzoneField />
-            <PriceForThai />
-            <PriceForForeigner />
+            <ProvincesDropdown />
+            <CommissionView />
             <RichTextAreaField
               fieldName="taskDetail.th"
               id="benefit-description-area-field"

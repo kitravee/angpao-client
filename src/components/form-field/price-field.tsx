@@ -8,8 +8,6 @@ import React, { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
 import NumberFormat, { InputAttributes } from 'react-number-format';
 
-import { Theme } from '@/theme/theme';
-
 interface PriceFieldProps {
   fieldName: string;
   inputLabelName?: string;
@@ -38,29 +36,25 @@ export const PriceField: FC<PriceFieldProps> = ({
         fullWidth
         InputProps={{
           inputComponent: NumberInput as any,
+
           inputProps: {
             // fixedDecimalScale: true,
             // suffix: '',
             // prefix: '',
             // thousandSeparator: true,
-            allowNegative: false,
+            // allowNegative: false,
+            // isNumericString: true,
             defaultValue: getValues()?.[fieldName],
-            sx: {
-              borderLeft: (theme: Theme) =>
-                `1px solid ${theme.palette.grey[400]}`,
-              height: '100%',
-              paddingLeft: '8px',
-            },
           },
-          startAdornment: (
-            <InputAdornment position="start">
+          endAdornment: (
+            <InputAdornment position="end">
               <Typography>{startLabel}</Typography>
             </InputAdornment>
           ),
         }}
         disabled={isSubmitting}
-        error={!!errors.name?.message}
-        helperText={errors.name?.message as string | undefined}
+        error={!!errors?.[fieldName]?.message}
+        helperText={errors?.[fieldName]?.message as string | undefined}
         id={id}
         size="small"
         {...register(fieldName)}
@@ -82,7 +76,7 @@ const NumberInput = React.forwardRef<NumberFormat<InputAttributes>, any>(
           onChange({
             target: {
               name: props.name,
-              value: values.value,
+              value: values?.value,
             },
           });
         }}
