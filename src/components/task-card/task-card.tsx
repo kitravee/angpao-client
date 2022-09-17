@@ -92,8 +92,8 @@ export const TaskCard: React.FC<Props> = (props) => {
                   variant="body1"
                 >
                   <NumberFormat
-                    displayType={'text'}
-                    thousandSeparator={true}
+                    thousandSeparator
+                    displayType="text"
                     value={type.price}
                   />
                 </Typography>

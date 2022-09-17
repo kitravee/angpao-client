@@ -20,7 +20,7 @@ export const SearchView = () => {
         }}
         id={id}
         placeholder="สวนสยาม"
-        size="small"
+        size="medium"
         sx={{ backgroundColor: 'white', borderRadius: 2 }}
         type="text"
       />
