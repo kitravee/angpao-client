@@ -15,7 +15,7 @@ export const CategoryView: FC<CategoryViewProps> = () => {
       display="flex"
       sx={{
         px: 2,
-        pt: 4,
+        pt: 6,
         pb: 2,
         borderBottomLeftRadius: 16,
         borderBottomRightRadius: 16,
