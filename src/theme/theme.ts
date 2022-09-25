@@ -30,6 +30,7 @@ const theme = createTheme({
   typography: {
     fontFamily: ['Prompt'].join(','),
   },
+
   palette: {
     mode: 'light',
     primary: {
@@ -72,6 +73,11 @@ export const darkTheme = createTheme({
     },
   },
 });
+
+theme.shadows[1] = '0px 1px 10px rgba(0, 0, 0, 0.25)';
+theme.shadows[2] = '0px 2px 10px rgba(0, 0, 0, 0.25)';
+theme.shadows[3] = '0px 5px 10px rgba(0, 0, 0, 0.25)';
+theme.shadows[4] = '0px 10px 10px rgba(0, 0, 0, 0.25)';
 
 export default theme;
 
