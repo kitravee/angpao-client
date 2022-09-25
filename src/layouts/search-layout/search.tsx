@@ -15,6 +15,7 @@ export const Search = () => {
         InputProps={{
           startAdornment: <SearchRoundedIcon color="action" sx={{ mr: 1 }} />,
         }}
+        color="secondary"
         defaultValue={router?.query?.keyword}
         id={id}
         placeholder="สวนสยาม"

@@ -35,8 +35,7 @@ export const Topbar: FC = () => {
           alignItems="center"
           display="flex"
           justifyContent="space-between"
-          // flex-direction="column"
-          p={2}
+          py={1}
           width="100%"
         >
           <Back />
