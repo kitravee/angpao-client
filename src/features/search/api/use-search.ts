@@ -81,6 +81,12 @@ export const useSearch = () => {
           ? response.meta.currentPage + 1
           : undefined;
       },
+      onError: (error: any) => {
+        // soft error handle
+        if (error?.response?.status === 401) {
+          router.push('/signin');
+        }
+      },
     },
   );
 };
