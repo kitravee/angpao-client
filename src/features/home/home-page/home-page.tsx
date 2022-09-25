@@ -1,7 +1,6 @@
 import { Box } from '@mui/system';
 import Head from 'next/head';
 
-import Link from '@/components/link';
 import { MainLayout } from '@/layouts/main-layout';
 import { PageComponent } from '@/types/next-page';
 
@@ -25,7 +24,6 @@ const HomePage: PageComponent = () => {
         <HighlightView />
       </Box>
       <WhyView />
-      <Link href="https://github.com/">test</Link>
       <FooterView />
     </>
   );

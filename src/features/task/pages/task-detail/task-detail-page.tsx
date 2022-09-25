@@ -25,6 +25,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const TaskDetailPage: PageComponent = () => {
   const isClient = useIsClient();
+
   return (
     <>
       <Head>
