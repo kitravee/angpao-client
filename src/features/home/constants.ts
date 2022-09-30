@@ -6,14 +6,34 @@ export const HOMEPAGE_SCHEMA = {
     dropdown: ['กรุงเทพฯ', 'ชลบุรี'],
   },
   categories: [
-    { src: '/home/cat1.svg', alt: 'โรงแรม', description: 'โรงแรม' },
-    { src: '/home/cat2.svg', alt: 'ร้านอาหาร', description: 'ร้านอาหาร' },
-    { src: '/home/cat3.svg', alt: 'ท่องเที่ยว', description: 'ท่องเที่ยว' },
-    { src: '/home/cat4.svg', alt: 'อื่นๆ', description: 'อื่นๆ' },
+    {
+      src: '/home/cat1.svg',
+      alt: 'โรงแรม',
+      categoryName: '/โรงแรม',
+      description: 'โรงแรม',
+    },
+    {
+      src: '/home/cat2.svg',
+      alt: 'ร้านอาหาร',
+      categoryName: '/ร้านอาหาร',
+      description: 'ร้านอาหาร',
+    },
+    {
+      src: '/home/cat3.svg',
+      alt: 'ท่องเที่ยว',
+      categoryName: '/ท่องเที่ยว',
+      description: 'ท่องเที่ยว',
+    },
+    {
+      src: '/home/cat4.svg',
+      alt: 'อื่นๆ',
+      categoryName: '/อื่นๆ',
+      description: 'อื่นๆ',
+    },
   ],
   tasks: [
     {
-      image: { src: '/home/mock_location1.png', alt: 'สวนสยาม' },
+      image: '/home/mock_location1.png',
       title: 'ส่วนลดสวนสยามค่าเข้า สวนน้ำและสวนสนุก',
       name: 'สวนสยาม',
       types: [
@@ -28,7 +48,7 @@ export const HOMEPAGE_SCHEMA = {
       ],
     },
     {
-      image: { src: '/home/mock_location2.png', alt: 'อานันท์ รีสอร์ท' },
+      image: '/home/mock_location2.png',
       title: 'รีสอร์ทติดหาด โรงแรม อาณา อานันท์ รีสอร์ท',
       name: 'อานันท์ รีสอร์ท',
       types: [
@@ -43,7 +63,7 @@ export const HOMEPAGE_SCHEMA = {
       ],
     },
     {
-      image: { src: '/home/mock_location3.png', alt: 'Lanna Massage' },
+      image: '/home/mock_location3.png',
       title: 'Lanna Massage คูปอง ส่วนลด นวดเพื่อสุขภาพ',
       name: 'Lanna Massage',
       types: [
@@ -58,7 +78,8 @@ export const HOMEPAGE_SCHEMA = {
       ],
     },
     {
-      image: { src: '/home/mock_location4.png', alt: 'วัดร่องขุ่น' },
+      image: '/home/mock_location4.png',
+      alt: 'วัดร่องขุ่น',
       title: 'ทัวร์ในประเทศ เชียงราย ภูชี้ฟ้า วัดร่องขุ่น',
       name: 'วัดร่องขุ่น',
       types: [
@@ -73,7 +94,7 @@ export const HOMEPAGE_SCHEMA = {
       ],
     },
     {
-      image: { src: '/home/mock_location5.png', alt: 'DreamWorld ' },
+      image: '/home/mock_location5.png',
       title: 'ส่วนลดสวนสยามค่าเข้า สวนน้ำและสวนสนุก',
       name: 'DreamWorld',
       types: [

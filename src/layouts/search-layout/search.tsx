@@ -5,24 +5,21 @@ import { useRouter } from 'next/router';
 
 const id = 'search-input';
 
-export const SearchView = () => {
+export const Search = () => {
   const router = useRouter();
+
   return (
-    <Box
-      bottom={0}
-      left="50%"
-      position="absolute"
-      sx={{ transform: 'translate(-50%,50%)' }}
-      width="80%"
-    >
+    <Box>
       <TextField
         fullWidth
         InputProps={{
           startAdornment: <SearchRoundedIcon color="action" sx={{ mr: 1 }} />,
         }}
+        color="secondary"
+        defaultValue={router?.query?.keyword}
         id={id}
         placeholder="สวนสยาม"
-        size="medium"
+        size="small"
         sx={{ backgroundColor: 'white', borderRadius: 2 }}
         type="text"
         onKeyDown={(e: any) => {

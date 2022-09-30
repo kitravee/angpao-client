@@ -11,6 +11,8 @@ export interface TaskFormSubmitData {
   taskDetail: ContentLanguages;
 }
 
+export type Status = 'ACTIVE' | 'INACTIVE';
+
 export interface TaskFormData {
   title: ContentLanguages;
   description: ContentLanguages;
@@ -27,7 +29,7 @@ export interface TaskFormData {
 }
 
 export type ContentLanguages = Record<'th' | 'en', string>;
-type Rate = {
+export type Rate = {
   id?: number;
   commissionType?: 'THAI' | 'FOREIGNER';
   commissionValue?: number;
