@@ -33,78 +33,47 @@ export const HOMEPAGE_SCHEMA = {
   ],
   tasks: [
     {
-      image: '/home/mock_location1.png',
+      imageUrl: ['/home/mock_location1.png'],
       title: 'ส่วนลดสวนสยามค่าเข้า สวนน้ำและสวนสนุก',
-      name: 'สวนสยาม',
-      types: [
+      name: { th: 'สวนสยาม' },
+      rates: [
         {
-          name: 'คนไทย',
-          price: 40,
+          commissionType: 'THAI',
+          commissionValue: 40,
         },
         {
-          name: 'ต่างชาติ',
-          price: 80,
+          commissionType: 'FOREIGNER',
+          commissionValue: 80,
         },
       ],
     },
     {
-      image: '/home/mock_location2.png',
+      imageUrl: ['/home/mock_location2.png'],
       title: 'รีสอร์ทติดหาด โรงแรม อาณา อานันท์ รีสอร์ท',
-      name: 'อานันท์ รีสอร์ท',
-      types: [
+      name: { th: 'อานันท์ รีสอร์ท' },
+      rates: [
         {
-          name: 'คนไทย',
-          price: 500,
+          commissionType: 'THAI',
+          commissionValue: 500,
         },
         {
-          name: 'ต่างชาติ',
-          price: 1000,
+          commissionType: 'FOREIGNER',
+          commissionValue: 1000,
         },
       ],
     },
     {
-      image: '/home/mock_location3.png',
+      imageUrl: ['/home/mock_location3.png'],
       title: 'Lanna Massage คูปอง ส่วนลด นวดเพื่อสุขภาพ',
-      name: 'Lanna Massage',
-      types: [
+      name: { th: 'Lanna Massage' },
+      rates: [
         {
-          name: 'คนไทย',
-          price: 100,
+          commissionType: 'THAI',
+          commissionValue: 100,
         },
         {
-          name: 'ต่างชาติ',
-          price: 200,
-        },
-      ],
-    },
-    {
-      image: '/home/mock_location4.png',
-      alt: 'วัดร่องขุ่น',
-      title: 'ทัวร์ในประเทศ เชียงราย ภูชี้ฟ้า วัดร่องขุ่น',
-      name: 'วัดร่องขุ่น',
-      types: [
-        {
-          name: 'คนไทย',
-          price: 400,
-        },
-        {
-          name: 'ต่างชาติ',
-          price: 800,
-        },
-      ],
-    },
-    {
-      image: '/home/mock_location5.png',
-      title: 'ส่วนลดสวนสยามค่าเข้า สวนน้ำและสวนสนุก',
-      name: 'DreamWorld',
-      types: [
-        {
-          name: 'คนไทย',
-          price: 200,
-        },
-        {
-          name: 'ต่างชาติ',
-          price: 400,
+          commissionType: 'FOREIGNER',
+          commissionValue: 200,
         },
       ],
     },
