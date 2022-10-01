@@ -17,6 +17,7 @@ export interface TaskCardProps {
   types: {
     name: string;
     price: number;
+    unit: string;
   }[];
 }
 
@@ -98,7 +99,7 @@ export const TaskCard: React.FC<TaskCardProps> = (props) => {
                   sx={{ ml: 0.5 }}
                   variant="body1"
                 >
-                  บาท
+                  {type.unit}
                 </Typography>
               </Box>
             </Box>

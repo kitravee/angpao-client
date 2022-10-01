@@ -17,6 +17,7 @@ export const taskTranformer = (taskCard: SearchTask): TaskCardProps => {
             ? 'คนไทย'
             : 'ต่างชาติ',
         price: taskCard?.rates?.[0]?.commissionValue,
+        unit: taskCard?.rates?.[1]?.commissionRateType === 'FIX' ? 'บาท' : '%',
       },
       {
         name:
@@ -24,6 +25,7 @@ export const taskTranformer = (taskCard: SearchTask): TaskCardProps => {
             ? 'คนไทย'
             : 'ต่างชาติ',
         price: taskCard?.rates?.[1]?.commissionValue,
+        unit: taskCard?.rates?.[1]?.commissionRateType === 'FIX' ? 'บาท' : '%',
       },
     ],
   };
