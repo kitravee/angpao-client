@@ -32,7 +32,7 @@ export interface SearchTask {
   createdDate: string;
   createdBy: string;
   tags: string[];
-  taskDetail: Rate[];
+  rates: Rate[];
 }
 
 interface Meta {

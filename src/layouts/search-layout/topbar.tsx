@@ -6,7 +6,8 @@ import React, { FC } from 'react';
 
 import { Back } from '@/components/back';
 
-import { Search } from './search';
+import { Search } from '../../components/search';
+
 import { SearchHamberger } from './search-hamberger';
 
 export const Topbar: FC = () => {

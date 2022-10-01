@@ -11,6 +11,19 @@ export interface TaskFormSubmitData {
   taskDetail: ContentLanguages;
 }
 
+export interface Task {
+  categoryId: number;
+  description: ContentLanguages;
+  id: string;
+  imageUrl?: string[];
+  name: ContentLanguages;
+  phoneNumbers: string;
+  provinceId: string;
+  rates: Rate[];
+  status: Status;
+  tags?: string[];
+}
+
 export type Status = 'ACTIVE' | 'INACTIVE';
 
 export interface TaskFormData {

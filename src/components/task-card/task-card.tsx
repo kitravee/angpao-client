@@ -10,6 +10,7 @@ import NumberFormat from 'react-number-format';
 import { RouterLink } from '../link-overlay';
 
 export interface TaskCardProps {
+  id: string;
   image: string;
   title: string;
   name: string;
@@ -20,7 +21,7 @@ export interface TaskCardProps {
 }
 
 export const TaskCard: React.FC<TaskCardProps> = (props) => {
-  const { image, title, name, types } = props;
+  const { image, title, name, types, id = '#' } = props;
   return (
     <Card
       sx={{
@@ -39,7 +40,7 @@ export const TaskCard: React.FC<TaskCardProps> = (props) => {
 
       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
         <CardContent sx={{ flex: '1 0 auto', pb: 1 }}>
-          <RouterLink to="#" underline="none">
+          <RouterLink to={id} underline="none">
             <Typography
               gutterBottom
               className="line-clamp-2"

@@ -3,14 +3,11 @@ import { Box } from '@mui/system';
 import { FC } from 'react';
 import NumberFormat from 'react-number-format';
 
+import { Rate } from '@/features/task/types';
+
 interface CommissionPriceProps {
   someProps?: any;
-  rate?: {
-    id: number;
-    commissionType: string;
-    commissionValue: number;
-    commissionRateType: string;
-  };
+  rate?: Rate;
 }
 
 export const CommissionPrice: FC<CommissionPriceProps> = ({ rate }) => {
