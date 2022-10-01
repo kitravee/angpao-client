@@ -30,7 +30,12 @@ export const SearchView: FC<SearchViewProps> = () => {
         <BackdropLoading />
       ) : (
         <Box my={4}>
-          <Box sx={{ '& > div': { mx: 2, my: 2 } }}>
+          <Box
+            sx={{
+              '& > div': { mx: 2, my: 2 },
+              '& > div:last-child': { my: 8 },
+            }}
+          >
             {data?.pages?.map((group) =>
               group?.data?.map((item) => {
                 taskTranformer(item?.task);

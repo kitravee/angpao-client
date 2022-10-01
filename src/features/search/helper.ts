@@ -6,17 +6,24 @@ export type TaskCard = Record<keyof TaskCardProps, string | any>;
 
 export const taskTranformer = (taskCard: SearchTask): TaskCardProps => {
   const taskCardTranformer: TaskCard = {
+    id: `/task-detail/${taskCard.id}`,
     name: taskCard.name.th,
     image: taskCard?.imageUrl?.[0],
     title: taskCard?.name.th,
     types: [
       {
-        name: taskCard?.taskDetail?.[0]?.commissionType,
-        price: taskCard?.taskDetail?.[0]?.commissionValue,
+        name:
+          taskCard?.rates?.[0]?.commissionType === 'THAI'
+            ? 'คนไทย'
+            : 'ต่างชาติ',
+        price: taskCard?.rates?.[0]?.commissionValue,
       },
       {
-        name: taskCard?.taskDetail?.[1]?.commissionType,
-        price: taskCard?.taskDetail?.[1]?.commissionValue,
+        name:
+          taskCard?.rates?.[1]?.commissionType === 'THAI'
+            ? 'คนไทย'
+            : 'ต่างชาติ',
+        price: taskCard?.rates?.[1]?.commissionValue,
       },
     ],
   };

@@ -18,7 +18,9 @@ const HomePage: PageComponent = () => {
       </Head>
 
       <BannerView />
-      <CategoryView />
+      <Box pt={4}>
+        <CategoryView />
+      </Box>
 
       <Box sx={{ px: 2, py: 3 }}>
         <HighlightView />

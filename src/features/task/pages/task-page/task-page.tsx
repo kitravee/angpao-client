@@ -10,7 +10,7 @@ import { RichTextAreaField } from '@/components/form-field/rich-text-area-field'
 import { TagField } from '@/components/form-field/tag-field';
 import { TitleField } from '@/components/form-field/title-field';
 import { SubmitButton } from '@/components/submit-button';
-import { AuthLayout } from '@/layouts/auth-layout';
+import { MainLayout } from '@/layouts/main-layout';
 import { PageComponent } from '@/types/next-page';
 
 import { ProvincesDropdown } from '../../../../components/form-field/provinces-dropdown';
@@ -31,7 +31,7 @@ const TaskPage: PageComponent = () => {
       <Head>
         <title>task | angpao</title>
       </Head>
-      <Box px={2}>
+      <Box pb={4} px={2}>
         <TaskFormProvider
           onSubmit={async (data) => {
             let imageUrl: any = undefined;
@@ -90,7 +90,7 @@ const TaskPage: PageComponent = () => {
 };
 
 TaskPage.getLayout = (page) => {
-  return <AuthLayout title="สร้างงาน">{page}</AuthLayout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 
 TaskPage.auth = false;

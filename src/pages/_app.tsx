@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import NextNProgress from 'nextjs-progressbar';
 import { SnackbarProvider } from 'notistack';
 import { useState } from 'react';
 
@@ -13,6 +14,7 @@ import { createEmotionCache, EmotionCacheProvider } from '@/lib/emotion';
 import { queryConfig } from '@/lib/react-query';
 import { MainThemeProvider } from '@/theme/main-theme-provider';
 // import { ThemeSettingProvider } from '@/theme/theme-provider';
+import theme from '@/theme/theme';
 import { PageComponent } from '@/types/next-page';
 
 interface CustomAppProps extends AppProps {
@@ -40,6 +42,7 @@ function MyApp({
           name="viewport"
         />
       </Head>
+
       <SessionProvider session={pageProps.session}>
         <QueryClientProvider client={queryClient}>
           {process.env.NODE_ENV !== 'test' && <ReactQueryDevtools />}
@@ -47,6 +50,13 @@ function MyApp({
             <EmotionCacheProvider emotionCache={emotionCache}>
               <MainThemeProvider>
                 {getLayout(<Component {...pageProps} />)}
+                <NextNProgress
+                  color={theme.palette.primary.main}
+                  height={3}
+                  showOnShallow={true}
+                  startPosition={0.3}
+                  stopDelayMs={200}
+                />
               </MainThemeProvider>
             </EmotionCacheProvider>
           </SnackbarProvider>
